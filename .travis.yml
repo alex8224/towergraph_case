@@ -1,0 +1,15 @@
+language: python
+
+python:
+  - 2.7
+
+install:
+    - pip install coveralls
+
+script:
+  - python test_pathfinder.py 2>&1 && coverage run test_pathfinder.py &
+  - pid=$!
+  - kill $pid
+
+after_success:
+    coveralls
