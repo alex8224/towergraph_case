@@ -85,7 +85,8 @@ class TowerGraph(object):
 
                 self._visited_posi[position] = 1
                 x, y = position
-                valid_positions = ifilter(self.check_position, [(x+1, y), (x, y+1)])
+                valid_positions = ifilter(self.check_position, \
+                                            [(x + 1, y), (x, y + 1)])
                 self._visit_stack.extend(valid_positions)
         return False
 
